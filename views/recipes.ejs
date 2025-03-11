@@ -1,0 +1,60 @@
+<%- include('./partials/header') %>
+  
+  <body>
+  <div>
+    <table class = "tables">
+        <tr>
+            <th>Chicken</th>
+        </tr>
+        <% chicken.forEach((recipe) => { %>
+            <tr>
+                <td>
+                    <form action="/food" method="post">
+                        <button type="submit" name="item" value="<%= recipe.RecipeName %>"><%= recipe.RecipeName %></button>
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+        </tr>
+    </table>
+    <table class = "tables">
+        <tr>
+            <th>Sausage</th>
+        </tr>
+        <% sausage.forEach((recipe) => { %>
+            <tr>
+                <td>
+                    <form action="/food" method="post">
+                        <button type="submit" name="item" value="<%= recipe.RecipeName %>"><%= recipe.RecipeName %></button>
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+        </tr>
+    </table>
+    <table class = "tables">
+        <tr>
+            <th>Egg</th>
+        </tr>
+        <% egg.forEach((recipe) => { %>
+            <tr>
+                <td>
+                    <form action="/food" method="post">
+                        <button type="submit" name="item" value="<%= recipe.RecipeName %>"><%= recipe.RecipeName %></button>
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+        </tr>
+    </table>
+  </div>
+  <div class="button-group">
+  <a href="/">
+    <button class="button">Home</button>
+  </a>
+  <a href="/enterrecipe">
+    <button class="button">Add Recipe</button>
+  </a>
+  </div>
+  </body>
+</html>

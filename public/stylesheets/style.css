@@ -1,0 +1,142 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  height: 100%;
+  
+}
+
+h1 {
+  font-size: 36px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 18px;
+}
+
+.heading {
+  background: linear-gradient(to right, #cc2b5e, #753a88);
+  
+}
+
+.links {
+  background-color: #333333;
+  color: white; 
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.deactive {
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.column {
+  color: black;
+  font-size: 16px;
+  text-align: left;
+  margin: 10px;
+  padding-left: 30px;
+}
+
+.outline {
+  padding: 5px;
+  padding-left: 30px;
+  border: 2px solid grey;
+  margin: 10px;
+  color: black;
+  font-size: 16px;
+  text-align: left;
+  border-radius: 15px;
+}
+
+.tables {
+  display: inline-block;
+  margin: 5px;
+  vertical-align: top;
+}
+
+.button {
+  color: black;
+  background-color: grey;
+  margin: 10px;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+footer {
+  background-color: #f1f1f1;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 8px;
+  font-size: 10px;
+}
+
+ul {
+  text-align: left;
+  display: inline-block;
+}
+
+#rank {
+  margin-left: 0%;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.hover-box {
+  position: relative;
+}
+
+div.button-group {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.inline-checkboxes {
+  display: table-cell; 
+  vertical-align: middle;
+  text-align: 45%;
+}
+
+div.addIngred {
+  text-align: left;
+  margin-left: 45%;
+}
+
+.popup {
+  z-index: 1000;
+  display: none;
+  position: absolute;
+  width: 150px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+  pointer-events: none;
+}

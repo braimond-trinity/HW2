@@ -1,0 +1,37 @@
+<%- include('./partials/header') %>
+  
+<body>
+    <script>
+      function showPopup(element) {
+          const popup = element.querySelector(".popup");
+          popup.style.display = "block";
+      }
+
+      function hidePopup(element) {
+          const popup = element.querySelector(".popup");
+          popup.style.display = "none";
+      }
+  </script>
+    <div class="container">
+        <div class="outline">
+            <h1><%= title %></h1>
+            <% recipes.forEach((recipe) => { %>
+                <p><%= recipe.Instructions %></p>
+            <% }) %>
+        </div>
+        <div class="outline">
+            <ul>
+                <% ingredients.forEach((ingredient) => { %>
+                        <div class="hover-box" onmouseover="showPopup(this)" onmouseleave="hidePopup(this)">
+                            <li><%= ingredient.IngredientName %>
+                            <div class="popup"><%= ingredient.HighlightedInfo %></div></li>
+                        </div>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+    <a href="/recipes">
+        <button class="button">Recipes</button>
+    </a>
+  </body>
+</html>

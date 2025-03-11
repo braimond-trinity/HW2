@@ -1,0 +1,88 @@
+<%- include('./partials/header') %>
+  <script>
+    function validateForm() {
+      let x = document.forms["form"]["RecipeName"].value;
+      if (x==="") {
+        alert("Please enter a name for the recipe");
+        return false;
+      };
+
+      <% foods.forEach((food) => { %>
+        if (x === "<%= food.RecipeName %>") {
+          alert("This recipe name already exists");
+          return false;
+        }
+      <% }); %>
+
+      let ingredients = document.forms["form"]["ingredients"]; // Get checkboxes by name
+      let checked = false;
+
+      // Loop through checkboxes to see if at least one is checked
+      for (let i = 0; i < ingredients.length; i++) {
+        if (ingredients[i].checked) {
+            checked = true;
+            break; // No need to check further
+        }
+      }
+
+      if (!checked) {
+        alert("At least one ingredient is required");
+        return false;
+      }
+
+      x = document.forms["form"]["Instructions"].value;
+      if (x==="") {
+        alert("Please enter instructions");
+        return false;
+      }
+      return true;
+  }
+  </script>
+  <body>
+    <h1>Enter new recipe information here, please.</h1>
+    <form name="form" action="addrecipe" method="POST" onsubmit="return validateForm();">
+        <label for="RecipeName">Recipe Name:</label>
+        <input type="text" name="RecipeName"><br>
+        <label for="Protein">Protein:</label>
+        <select name="Protein" id="Protein">
+            <option value='c'>Chicken</option>
+            <option value='s'>Sausage</option>
+            <option value='e'>Egg</option>
+        </select><br>
+        <div class="addIngred">
+          <input type="checkbox" name="ingredients" value ="Hot Dog Sausage">
+          <label for="ingredients"> Hot Dog Sausage</label><br>
+          <input type="checkbox" name="ingredients" value="Hot Dog Bun">
+          <label for="ingredients"> Hot Dog Bun</label><br>
+          <input type="checkbox" name="ingredients" value="Chicken Breast">
+          <label for="ingredients"> Chicken Breast</label><br>
+          <input type="checkbox" name="Egg" value="Egg">
+          <label for="ingredients"> Egg</label><br>
+          <input type="checkbox" name="ingredients" value="Salt">
+          <label for="ingredients"> Salt</label><br>
+          <input type="checkbox" name="ingredients" value="Pepper">
+          <label for="ingredients"> Pepper</label><br>
+          <input type="checkbox" name="ingredients" value="Mayonnaise">
+          <label for="ingredients"> Mayonnaise</label><br>
+          <input type="checkbox" name="ingredients" value="Celery">
+          <label for="ingredients"> Celery</label><br>
+          <input type="checkbox" name="ingredients" value="Vegetables">
+          <label for="ingredients"> Vegetables</label><br>
+          <input type="checkbox" name="ingredients" value="Broth">
+          <label for="ingredients"> Broth</label><br>
+          <input type="checkbox" name="ingredients" value="Sausage">
+          <label for="ingredients"> Sausage</label><br>
+          <input type="checkbox" name="ingredients" value="Bread">
+          <label for="ingredients"> Bread</label><br>
+          <input type="checkbox" name="ingredients" value="Cheese">
+          <label for="ingredients"> Cheese</label><br>
+        </div>
+        <label for="Instructions">Recipe Instructions:</label>
+        <input type="text" id="Instructions" name="Instructions"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <a href="/recipes">
+      <button class="button">Recipes</button>
+    </a>
+  </body>
+</html>
