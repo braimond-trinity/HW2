@@ -28,7 +28,7 @@ header {
 }
 
 .heading {
-  background: linear-gradient(to right, #cc2b5e, #753a88);
+  background: linear-gradient(to right, #cc2b5e, teal);
   
 }
 
@@ -77,12 +77,12 @@ header {
 
 .button {
   color: black;
-  background-color: grey;
+  background-color: teal;
   margin: 10px;
 }
 
 .button:hover {
-  background-color: #45a049;
+  background-color: #cc2b5e;
 }
 
 footer {
